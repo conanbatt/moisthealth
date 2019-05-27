@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  type: 
+  text: MyString
+  task: one
+  patient: one
+  provider: one
+  title: MyString
+
+two:
+  status: MyString
+  type: 
+  text: MyString
+  task: two
+  patient: two
+  provider: two
+  title: MyString

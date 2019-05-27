@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task.status %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @task.type %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @task.text %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @task.task %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @task.patient %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @task.provider %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
