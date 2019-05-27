@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2019_05_27_014914) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.string "dob"
     t.string "gender"
-    t.integer "provider_id"
+    t.bigint "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider_id"], name: "index_patients_on_provider_id"
@@ -33,11 +36,11 @@ ActiveRecord::Schema.define(version: 2019_05_27_014914) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "status"
-    t.text "task_type"
+    t.string "task_type"
     t.string "text"
-    t.integer "task_id"
-    t.integer "patient_id"
-    t.integer "provider_id"
+    t.bigint "task_id"
+    t.bigint "patient_id"
+    t.bigint "provider_id"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,4 +49,8 @@ ActiveRecord::Schema.define(version: 2019_05_27_014914) do
     t.index ["task_id"], name: "index_tasks_on_task_id"
   end
 
+  add_foreign_key "patients", "providers"
+  add_foreign_key "tasks", "patients"
+  add_foreign_key "tasks", "providers"
+  add_foreign_key "tasks", "tasks"
 end
