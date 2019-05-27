@@ -62,3 +62,4 @@ This is barely a prototype, but it was very easy to build and very easy to get g
 - Pre-optimization topics (data-modeling concerns, CDN, material UI)
 - Non-mainstream stack choice (Go) for web development
 - Significant visual deficiencies in the product + Talks about building a complex UI (skills don't match aspirations)
+- HIPAA compliance issues: Asana is not compliant as far as I know. Google documents have patient information and you need BA's from them. This applies to deploy strategies.
