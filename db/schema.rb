@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_003856) do
+ActiveRecord::Schema.define(version: 2019_05_27_014914) do
 
   create_table "patients", force: :cascade do |t|
     t.string "name"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_003856) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "status"
-    t.string "type"
+    t.text "task_type"
     t.string "text"
     t.integer "task_id"
     t.integer "patient_id"

@@ -39,7 +39,7 @@
   <div class="form-group">
     <%= f.label :provider_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :provider_id, :class => 'form-control' %>
+      <%= f.select(:provider_id, Provider.all.collect {|pro| [pro.name, pro.id]}, class: 'form-control') %>
     </div>
     <%=f.error_span(:provider_id) %>
   </div>

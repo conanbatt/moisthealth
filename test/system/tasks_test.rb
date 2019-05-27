@@ -20,7 +20,7 @@ class TasksTest < ApplicationSystemTestCase
     fill_in "Task", with: @task.task_id
     fill_in "Text", with: @task.text
     fill_in "Title", with: @task.title
-    fill_in "Type", with: @task.type
+    fill_in "Type", with: @task.task_type
     click_on "Create Task"
 
     assert_text "Task was successfully created"
@@ -37,7 +37,7 @@ class TasksTest < ApplicationSystemTestCase
     fill_in "Task", with: @task.task_id
     fill_in "Text", with: @task.text
     fill_in "Title", with: @task.title
-    fill_in "Type", with: @task.type
+    fill_in "Type", with: @task.task_type
     click_on "Update Task"
 
     assert_text "Task was successfully updated"

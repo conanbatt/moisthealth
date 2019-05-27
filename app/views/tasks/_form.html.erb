@@ -16,18 +16,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :status, :class => 'control-label col-lg-2' %>
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :status, :class => 'form-control' %>
+      <%= f.text_field :title, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:status) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :type, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :type, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:type) %>
+    <%=f.error_span(:title) %>
   </div>
   <div class="form-group">
     <%= f.label :text, :class => 'control-label col-lg-2' %>
@@ -37,16 +30,31 @@
     <%=f.error_span(:text) %>
   </div>
   <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select(:status, Task.statuses, class: 'form-control') %>
+    </div>
+    <%=f.error_span(:status) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :task_type, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select(:task_type, Task.task_types, class: 'form-control') %>
+    </div>
+    <%=f.error_span(:task_type) %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :task_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :task_id, :class => 'form-control' %>
+      <%= f.select(:task_id, Task.all.collect {|pro| [pro.title, pro.id ]}, :class => 'form-control', include_blank: true) %>
     </div>
     <%=f.error_span(:task_id) %>
   </div>
   <div class="form-group">
     <%= f.label :patient_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :patient_id, :class => 'form-control' %>
+      <%= f.select(:patient_id, Patient.all.collect {|pro| [pro.name, pro.id ]}, :class => 'form-control') %>
     </div>
     <%=f.error_span(:patient_id) %>
   </div>
@@ -56,13 +64,6 @@
       <%= f.select(:provider_id, Provider.all.collect {|pro| [pro.name, pro.id ]}, :class => 'form-control') %>
     </div>
     <%=f.error_span(:provider_id) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :title, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :title, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:title) %>
   </div>
 
   <div class="form-group">
