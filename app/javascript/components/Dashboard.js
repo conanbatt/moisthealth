@@ -11,26 +11,29 @@ class Dashboard extends React.Component {
         {tasks.map(task => (
           <Panel key={task.id}>
             <Panel.Heading>
-              <h3 style={{ margin: 0 }}>
+              <strong style={{ margin: 0 }}>
                 { task.title }
-                <Badge bsStyle="primary" style={{ margin: '0 5px'}}>
-                  { task.status }
-                </Badge>
-                <Badge bsStyle="primary" style={{ marginRight: '5px'}}>
-                  { task.task_type }
-                </Badge>
-              </h3>
+                <span style={{ float: 'right' }}>
+                  <Badge bsStyle="primary" style={{ margin: '0 5px'}}>
+                    { task.status }
+                  </Badge>
+                  <Badge bsStyle="primary" style={{ marginRight: '5px'}}>
+                    { task.task_type }
+                  </Badge>
+                </span>
+              </strong>
             </Panel.Heading>
             <Panel.Body>
-              <p>
-                Provider: { task.provider.name }
+              <div style={{ float: 'right', width: '140px' }}>
+                Dr{ task.provider.name }
                 <br />
                 Patient: { task.patient.name }
-              </p>
-              <p className="lead">
-                { task.text }
-              </p>
-
+              </div>
+              <div style={{ marginRight: '150px' }}>
+                <p>
+                  { task.text }
+                </p>
+              </div>
             </Panel.Body>
             <Panel.Footer>
               <ButtonToolbar>
