@@ -6,7 +6,7 @@ I created this stack to put some effort behind my initial impressions.
 ### FAST ITERATION IS KEY
 
 A key metric of startup success is how often do you deploy changes to the product. This is what I would optimize in picking the tools for the stack.
-Each significant feature deployed can be counted as a cycle and I would aim at multi-daily samples.
+Each significant feature deployed can be counted as a cycle and I would aim at multi-daily deploys.
 
 ### Why Rails
 
@@ -18,13 +18,13 @@ Each significant feature deployed can be counted as a cycle and I would aim at m
 
 * Very solid DB model with ActiveRecord & migrations
 
-### Why not Go
+### Challenges with Go
 
 * Not optimized for CRUD web development
 
 * Niche and expensive Talent
 
-* Performance advantages not applicable to the use case
+* Performance advantages not particularly fruitful
 
 ### Opinions & decisions
 
@@ -34,7 +34,7 @@ Rails scaffolds create models, views, controllers, routes. The default is unsigh
 
 * Single dashboard page on react
 
-A single endpoint can have the true react app level interactions, with asyncronicity, liveupdates, etc. Scoping compliacations to a single page.
+A single endpoint can have the true react app level interactions, with asyncronicity, liveupdates, etc. Scoping complications to a single page.
 
 * Bootstrap > Material-UI
 
@@ -62,4 +62,4 @@ This is barely a prototype, but it was very easy to build and very easy to get g
 - Pre-optimization topics (data-modeling concerns, CDN, material UI)
 - Non-mainstream stack choice (Go) for web development
 - Significant visual deficiencies in the product + Talks about building a complex UI (skills don't match aspirations)
-- HIPAA compliance issues: Asana is not compliant as far as I know. Google documents have patient information and you need BA's from them. This applies to deploy strategies.
+- HIPAA compliance concerns: Asana is not compliant as far as I know. Google documents have patient information and you need BA's from them. This applies to deploy strategies. (heroku is not hipaa compliant)
